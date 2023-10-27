@@ -2,11 +2,23 @@ import { useState } from 'react'
 import './App.css'
 import styled from 'styled-components'
 
-const CalculadoraCaixa = styled.section`
+const Titulo = styled.h1`
+  text-align:center;
+  font-size:5vh;
+  padding:5vh;
+`
 
+const Container = styled.section`
+  display:flex;
+  justify-content:center;
+`
+const Tela = styled.input`
 
 
 `
+
+  
+
 
 function App() {
   const [primeiroValor, setPrimeiroValor] = useState()
@@ -31,23 +43,29 @@ function App() {
   const Divisao = () =>{
     setResultado(primeiroValor / segundoValor)
   }
-
-
+  const Limpar = () =>{
+    setResultado('0')
+  }
 
   
-
   return (
-    <>
-    <CalculadoraCaixa>
-  <h1>Calculadora</h1>
-  <input type="number" onChange={CapturarValor} />
-  <input type="number" onChange={CapturarSegundoValor} />
+    <> 
+    <Titulo>Calculadora</Titulo>
+  <Container>
+ 
+  <Tela type="number" onChange={CapturarValor} />
+  <Tela type="number" onChange={CapturarSegundoValor} />
+  
+  </Container>
+
+  <Texto2>{resultado}</Texto2>
   <button onClick={Soma}>+</button>
   <button onClick={Subtracao}>-</button>
   <button onClick={Multiplicacao}>x</button>
   <button onClick={Divisao}>÷</button>
-  <h1>{resultado}</h1>
-  </CalculadoraCaixa>
+  <button onClick={Limpar}>C</button>
+  
+  
     </>
   )
 }
