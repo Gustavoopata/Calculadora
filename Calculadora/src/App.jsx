@@ -1,19 +1,68 @@
 import { useState } from 'react'
-import './App.css'
 import styled from 'styled-components'
 
 const Titulo = styled.h1`
   text-align:center;
   font-size:5vh;
   padding:5vh;
+  color:white;
 `
 
 const Container = styled.section`
   display:flex;
   justify-content:center;
 `
-const Tela = styled.input`
+const Botao1 = styled.button`
+  margin:10px;
+  width:4vw;
+  height:8vh;
+  font-size:larger;
+  background-color:#A3A3A3;
+`
+const Botao2 = styled.button`
+  margin:10px;
+  width:4vw;
+  height:8vh;
+  font-size:larger;
+  background-color:#A3A3A3;
+`
+const Botao3 = styled.button`
+  margin:10px;
+  width:4vw;
+  height:8vh;
+  font-size:larger;
+  background-color:#A3A3A3;
+`
+const Botao4 = styled.button`
+  margin:10px;
+  width:4vw;
+  height:8vh;
+  font-size:larger;
+  background-color:#A3A3A3;
+`
+const Botao5 = styled.button`
+  margin:10px;
+  width:4vw;
+  height:8vh;
+  font-size:larger;
+  background-color:#FFA500;
+`
 
+const Tela = styled.input`
+width:10px;
+flex: 1;
+padding: 8px;
+font-size: 1em;
+border: 1px solid #ccc;
+border-radius: 3px;
+`
+const Fundo = styled.body`
+background-color:black;
+padding:300px;
+`
+const Resposta = styled.h1`
+color:white;
+text-align:center;
 
 `
 
@@ -46,10 +95,10 @@ function App() {
   const Limpar = () =>{
     setResultado('0')
   }
-
-  
+                  
   return (
     <> 
+    <Fundo>
     <Titulo>Calculadora</Titulo>
   <Container>
  
@@ -58,14 +107,15 @@ function App() {
   
   </Container>
 
-  <Texto2>{resultado}</Texto2>
-  <button onClick={Soma}>+</button>
-  <button onClick={Subtracao}>-</button>
-  <button onClick={Multiplicacao}>x</button>
-  <button onClick={Divisao}>÷</button>
-  <button onClick={Limpar}>C</button>
-  
-  
+  <Resposta>{resultado}</Resposta>
+  <Container>
+  <Botao1 onClick={Soma}>+</Botao1>
+  <Botao2 onClick={Subtracao}>-</Botao2>
+  <Botao3 onClick={Multiplicacao}>x</Botao3>
+  <Botao4 onClick={Divisao}>÷</Botao4>
+  <Botao5 onClick={Limpar}>C</Botao5>
+  </Container>
+  </Fundo>
     </>
   )
 }
