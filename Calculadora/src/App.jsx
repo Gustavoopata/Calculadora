@@ -66,9 +66,6 @@ text-align:center;
 
 `
 
-  
-
-
 function App() {
   const [primeiroValor, setPrimeiroValor] = useState()
   const [segundoValor, setSegundoValor] = useState()
